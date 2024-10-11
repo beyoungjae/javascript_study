@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 신한카드 혹은 롯데카드로 예매시 10% 할인
+
+         var ticketMoney = 40000 // 티켓 가격
+         var card = 'L01' // 결제 카드(롯데카드 코드: L01, 신한카드 코드: SH01)
+
+         if (card == 'L01' || card == 'SH01') {
+            money = ticketMoney - ticketMoney * 0.1 // 10% 할인
+            document.write(`최종 결제 금액: ${money}원`)
+         }
+      </script>
+   </body>
+</html>

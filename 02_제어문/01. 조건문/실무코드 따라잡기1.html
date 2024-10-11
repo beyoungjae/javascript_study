@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         /*
+        롯데카드: 10% 할인
+        신한카드: 20% 할인
+        우리카드: 30% 할인
+        */
+
+         const input = prompt('사용할 카드를 입력하세요. 예) 롯데, 신한, 우리', '')
+         const pay = 50000 // 결제금액
+
+         switch (input) {
+            case '롯데':
+               alert(`롯데카드로 결제시 결제금액: ${pay - pay * 0.1}원`)
+               break
+            case '신한':
+               alert(`신한카드로 결제시 결제금액: ${pay - pay * 0.2}원`)
+               break
+            case '우리':
+               alert(`우리카드로 결제시 결제금액: ${pay - pay * 0.3}원`)
+               break
+            default:
+               alert('할인을 지원하지 않는 카드입니다.')
+               break
+         }
+      </script>
+   </body>
+</html>

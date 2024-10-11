@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // inch를 입력받아 cm로 바꾸는 코드 (1 inch = 2.54 cm)
+
+         // 1. inch 값을 입력받기
+         const rawInput = prompt('inch 단위의 숫자를 입력해주세요.')
+         console.log(typeof rawInput) //promt는 무조건 입력받은 값이 문자열 타입
+
+         // 2. 입력받은 inch값을 숫자형으로 변경
+         const inch = Number(rawInput)
+         console.log(typeof inch)
+
+         // 3. 숫자형으로 변경한 inch값을 cm로 바꾸기
+         const cm = inch * 2.54
+
+         // 4. 결과 출력
+
+         document.write(`${inch}는 ${cm}cm입니다.`)
+      </script>
+   </body>
+</html>

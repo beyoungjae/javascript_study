@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let list = ''
+
+         list += '<ul>' // list = list + '<ul>'
+         list += '<li>Hello</li>' // list = list + '<li>Hello</li>'
+         list += '<li>Hello</li>'
+         list += '<li>Hello</li>'
+         list += '</ul>'
+
+         console.log(list)
+         document.write(list)
+
+         // 벡틱으로 사용하기
+
+         let list2 = `
+        <ul>
+            <li>javascript</li>
+            <li>javascript</li>
+            <li>javascript</li>
+        </ul>
+        `
+         document.write(list2)
+      </script>
+   </body>
+</html>
