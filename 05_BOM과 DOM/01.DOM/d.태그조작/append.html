@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>예제</title>
+   </head>
+   <body>
+      <ul id="first">
+         <li>첫 번째</li>
+      </ul>
+
+      <script>
+         //appendChild 형제태그 뒤에 붙는다
+         // 문서 객체 읽기
+         const first = document.querySelector('#first')
+
+         // h1 태그 객체 생성
+         const li = document.createElement('li')
+         li.textContent = '두번째'
+
+         first.appendChild(li)
+      </script>
+   </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>예제</title>
+   </head>
+   <body>
+      <input type="text" id="my_input" placeholder="텍스트를 입력하세요" />
+
+      <script>
+         const inputField = document.querySelector('#my_input')
+
+         inputField.addEventListener('input', (event) => {
+            console.log(event.target.value)
+         })
+      </script>
+   </body>
+</html>

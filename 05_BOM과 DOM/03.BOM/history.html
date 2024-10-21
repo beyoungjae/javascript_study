@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>여러 객체</title>
+   </head>
+   <body>
+      <button onclick="back()">뒤로가기</button>
+      <button onclick="reload()">새로고침</button>
+      <script>
+         function back() {
+            history.go(-1)
+            // history.back()
+            /*
+                history.go(2) 는 현재 페이지에서 2 페이지 앞으로 이동하고, 
+                history.go(-2) 는 현재 페이지에서 2 페이지 뒤로 이동합니다. 
+                history.go(0) == location.reload()
+            */
+         }
+
+         function reload() {
+            location.reload()
+            //history.go(0)
+         }
+      </script>
+   </body>
+</html>

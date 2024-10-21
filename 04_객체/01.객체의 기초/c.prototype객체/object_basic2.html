@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // Car 객체의 속성(생성자)
+         function Car(color, seater) {
+            this.color = color
+            this.seater = seater
+         }
+
+         // Car 객체의 기능(함수)
+         Car.prototype.run = function (status) {
+            if (status) {
+               return '자동차가 달립니다.'
+            }
+         }
+
+         Car.prototype.stop = function (status) {
+            if (status) {
+               return '자동차가 멈춥니다.'
+            }
+         }
+
+         // Car 객체 생성
+         const myCar1 = new Car('블랙', 4)
+         const myCar2 = new Car('화이트', 6)
+
+         // 사용 예
+         console.log(myCar1.run(true)) // '자동차가 달립니다.'
+         console.log(myCar1.stop(true)) // '자동차가 멈춥니다.'
+
+         console.log(myCar2.run(true)) // '자동차가 달립니다.'
+         console.log(myCar2.stop(true)) // '자동차가 멈춥니다.'
+      </script>
+   </body>
+</html>

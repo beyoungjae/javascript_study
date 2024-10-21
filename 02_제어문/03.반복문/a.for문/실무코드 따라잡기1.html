@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 다음은 어떤 쇼핑몰의 과일별 가격 배열이다.
+         const items = [
+            ['사과 1kg', '귤 1kg', '바나나 1송이', '오렌지 12개'],
+            [18000, 8000, 5000, 12000],
+         ]
+
+         const itemNames = items[0]
+         const itemPrices = items[1]
+
+         // case1
+
+         let html = `<ul>`
+         for (const itemName of itemNames) {
+            html += `<li>${itemName}</li>`
+         }
+         html += `</ul>`
+
+         document.write(html)
+         document.write(`<hr />`)
+
+         // case2
+         // toLocaleString('ko-KR') 원단위 콤마 찍는 자바스크립트 함수
+         let html2 = `<ul>`
+         for (const i in itemNames) {
+            html2 += `<li>${itemNames[i]} 가격: ${itemPrices[i].toLocaleString('ko-KR')}원</li>`
+         }
+         html2 += `</ul>`
+
+         document.write(html2)
+      </script>
+   </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>예제</title>
+   </head>
+   <body>
+      <img class="rect" />
+      <img class="rect" />
+      <img class="rect" />
+      <img class="rect" />
+
+      <script>
+         const rects = document.querySelectorAll('.rect')
+
+         rects.forEach((rect, index) => {
+            const width = (index + 1) * 100
+            const src = `https://picsum.photos/${width}/250`
+            rect.setAttribute('src', src)
+         })
+      </script>
+   </body>
+</html>

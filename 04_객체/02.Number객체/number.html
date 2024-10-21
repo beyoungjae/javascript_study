@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const l = 123.456789
+         console.log(l.toFixed(2))
+         console.log(l.toFixed(3))
+
+         const m = Number('abc')
+         if (Number.isNaN(m)) {
+            console.log('숫자가 아닙니다')
+         } else {
+            console.log('숫자 입니다')
+         }
+
+         const n = 10 / 0
+         if (Number.isFinite(n)) {
+            console.log('무한대가 아닙니다')
+         } else {
+            console.log('무한대 입니다')
+         }
+      </script>
+   </body>
+</html>

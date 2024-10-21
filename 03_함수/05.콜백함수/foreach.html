@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         //foreach 함수: for문과 같은 역할
+         const array1 = ['a', 'b', 'c']
+
+         //ES5
+         array1.forEach(function (element, index, array) {
+            console.log('index:', index, 'element:', element, 'array:', array)
+         })
+
+         //ES6
+         array1.forEach((element) => console.log(element))
+      </script>
+   </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 매개변수의 자료형에 따라 조건 분기해 결과를 출력해주는 함수
+         function test(first, ...rests) {
+            // isArray() -> 함수인지 아닌지 true, false로 리턴해주는 함수
+            if (Array.isArray(first)) {
+               console.log('first:', first)
+               console.log('rests 없음:', rests)
+            } else if (typeof first === 'number') {
+               console.log('first:', first)
+               console.log('rests 있음:', rests)
+            }
+         }
+
+         test([52, 273, 32, 103, 275, 24, 57])
+         test(52, 273, 32, 103, 275, 24, 57)
+      </script>
+   </body>
+</html>

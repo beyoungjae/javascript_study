@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let dog = {
+            name: '흰둥이',
+            owner: '신짱구',
+            age: 1,
+            family: ['신짱구', '신짱아', '봉미선', '신형만'],
+            walk: function () {
+               console.log(this.name + '는 산책 중 입니다.')
+            },
+         }
+
+         //객체 내부의 일반 속성값 삭제
+         delete dog.age
+         console.log(dog)
+
+         console.log('-----------------------')
+
+         //객체 내부의 배열 속성 값 삭제
+         delete dog.family[0]
+         console.log(dog.family)
+
+         delete dog.family
+         console.log(dog)
+
+         console.log('-----------------------')
+
+         //객체 내부의 함수 삭제
+         delete dog.walk
+         console.log(dog)
+      </script>
+   </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>여러 객체</title>
+   </head>
+   <body>
+      <button onclick="move()">이동!</button>
+      <script>
+         /*
+         1. screen.width:
+         사용자가 보고 있는 디스플레이 장치(모니터 또는 스크린)의 해상도를 나타냅니다. 브라우저 창의 크기와는 무관하며, 실제 디스플레이 화면의 너비를 나타냅니다.
+         예시: 사용자가 1920x1080 해상도의 모니터를 사용 중이라면, screen.width는 1920을 반환합니다.
+
+         2. window.innerWidth:
+         브라우저 창에서 실제로 웹 페이지가 표시되는 영역(뷰포트)의 너비입니다. 
+         예시: 사용자가 브라우저 창을 800px 너비로 줄였다면, window.innerWidth는 800을 반환합니다.
+         */
+         var sWidth = screen.width
+         var sHeight = screen.height
+         var sColor = screen.colorDepth
+         console.log(sWidth)
+         console.log(sHeight)
+         console.log(sColor)
+
+         var local = location.href
+         console.log(local)
+
+         var NaviInfo = 'User-agent header sent: ' + navigator.userAgent
+         console.log(NaviInfo)
+
+         function move() {
+            location.href = './history.html'
+         }
+      </script>
+   </body>
+</html>

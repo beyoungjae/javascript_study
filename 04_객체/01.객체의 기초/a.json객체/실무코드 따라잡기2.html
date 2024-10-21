@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const data = {
+            result: [
+               {
+                  title: '이태원 클라쓰',
+                  year: 2020,
+                  genre: ['드라마', '로맨스'],
+                  episodes: 16,
+                  cast: ['박서준', '김다미'],
+                  // cast: ['박서준', '김다미', '유재명', '권나라'],
+                  synopsis: '편견과 불공정에 맞서 싸우는 청년의 성공 스토리.',
+               },
+               {
+                  title: '사랑의 불시착',
+                  year: 2019,
+                  genre: ['로맨스', '코미디'],
+                  episodes: 16,
+                  cast: ['현빈', '손예진'],
+                  synopsis: '북한으로 불시착한 재벌 상속녀와 북한 장교의 사랑 이야기.',
+               },
+               {
+                  title: '호텔 델루나',
+                  year: 2019,
+                  genre: ['판타지', '로맨스'],
+                  episodes: 16,
+                  cast: ['아이유', '여진구'],
+                  synopsis: '죽은 영혼들이 묵는 호텔에서 벌어지는 미스터리한 이야기.',
+               },
+               {
+                  title: '미스터 션샤인',
+                  year: 2018,
+                  genre: ['역사', '멜로'],
+                  episodes: 24,
+                  cast: ['이병헌', '김태리'],
+                  synopsis: '구한말 조선과 미국에서 살아가는 사람들의 사랑과 충돌을 그린 작품.',
+               },
+               {
+                  title: '빈센조',
+                  year: 2021,
+                  genre: ['액션', '코미디'],
+                  episodes: 20,
+                  cast: ['송중기', '전여빈'],
+                  synopsis: '이탈리아 마피아 변호사 빈센조가 한국으로 돌아와 정의를 실현하는 이야기.',
+               },
+               {
+                  title: '슬기로운 의사생활',
+                  year: 2020,
+                  genre: ['드라마', '의학'],
+                  episodes: 12,
+                  cast: ['조정석', '유연석'],
+                  synopsis: '의사로서의 일상과 우정, 사랑을 그린 이야기.',
+               },
+               {
+                  title: '더 킹: 영원의 군주',
+                  year: 2020,
+                  genre: ['판타지', '로맨스'],
+                  episodes: 16,
+                  cast: ['이민호', '김고은'],
+                  synopsis: '평행 세계를 넘나드는 두 나라의 황제와 형사의 이야기를 담은 판타지 로맨스.',
+               },
+               {
+                  title: '태양의 후예',
+                  year: 2016,
+                  genre: ['로맨스', '액션'],
+                  episodes: 16,
+                  cast: ['송중기', '송혜교'],
+                  synopsis: '군인과 의사 간의 로맨스와 전쟁의 위험 속에서 피어나는 사랑을 그린 이야기.',
+               },
+               {
+                  title: '비밀의 숲',
+                  year: 2017,
+                  genre: ['스릴러', '미스터리'],
+                  episodes: 16,
+                  cast: ['조승우', '배두나'],
+                  synopsis: '감정을 잃은 검사와 정의로운 형사가 공조하여 부패한 검찰 조직을 파헤치는 이야기.',
+               },
+               {
+                  title: '킹덤',
+                  year: 2019,
+                  genre: ['좀비', '사극'],
+                  episodes: 6,
+                  cast: ['주지훈', '류승룡'],
+                  // cast: ['주지훈', '류승룡', '배두나'],
+                  synopsis: '조선 시대에 퍼진 좀비 역병을 막기 위한 왕자의 투쟁을 다룬 이야기.',
+               },
+            ],
+         }
+
+         const dramas = data.result
+
+         // 1. 드라마 제목, 줄거리, 주연배우만 모두 출력해 주세요.
+
+         dramas.forEach((drama) => {
+            document.write(`<p>제목: ${drama.title} | 줄거리: ${drama.synopsis} | 주연배우: ${drama.cast[0]},${drama.cast[1]}</p>`)
+         })
+
+         // 1번 문제에서 드라마마다 주연배우 인원이 다르면 어떻게 출력해야 할까요? - step1
+         // map을 사용해 결과를 바로 출력해줍니다.
+         /*
+         dramas.forEach((drama) => {
+            document.write(
+               `<p>제목: ${drama.title} | 줄거리: ${drama.synopsis} | 주연배우: ${drama.cast.map((actor) => {
+                  return actor
+               })}</p>`
+            )
+         })
+         */
+
+         // 1번 문제에서 드라마마다 주연배우 인원이 다르면 어떻게 출력해야 할까요? - step2
+         // 필요없는 중괄호나 return 구문등을 정리합니다.
+         /*
+         dramas.forEach((drama) => {
+            document.write(`<p>제목: ${drama.title} | 줄거리: ${drama.synopsis} | 주연배우: ${drama.cast.map((actor) => actor)}</p>`)
+         })
+         */
+
+         // 2. 드라마 장르 중 판타지에 해당하는 드라마 제목만 출력해 주세요. - step1
+         document.write(`<hr />`)
+         document.write(`<h2>판타지 드라마</h2>`)
+
+         const result1 = dramas.filter((drama) => {
+            const genres = drama.genre //장르 배열 저장 ex) ['좀비', '사극'] 이런 형태
+
+            for (const genre of genres) {
+               if (genre === '판타지') {
+                  return true
+               }
+            }
+         })
+
+         const result2 = result1.map((drama) => {
+            document.write(`<p>${drama.title}</p>`)
+         })
+
+         // 2. 드라마 장르 중 판타지에 해당하는 드라마 제목만 출력해 주세요. - step2
+         // 이런 경우 함수의 체이닝을 해주는 편이 더 낫습니다.
+
+         /*
+         const result1 = dramas
+            .filter((drama) => {
+               const genres = drama.genre //장르 배열 저장 ex) ['좀비', '사극'] 이런 형태
+
+               for (const genre of genres) {
+                  if (genre === '판타지') {
+                     return true
+                  }
+               }
+            })
+            .map((drama) => {
+               document.write(`<p>${drama.title}</p>`)
+            })
+         */
+
+         // 2. 드라마 장르 중 판타지에 해당하는 드라마 제목만 출력해 주세요. - step3
+         // 장르 배열에서 원하는 글자가 포함된 요소를 가져오는 방법은 사실 includes()라는 함수로 손쉽게 해결 가능합니다. -> 자바스크립트에서 제공하는 함수를 적절하게 사용한다면 코드가 훨씬 깔끔해집니다
+         // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+
+         /*
+         const result1 = dramas
+            .filter((drama) => {
+               return drama.genre.includes('판타지')
+            })
+            .map((drama) => {
+               document.write(`<p>${drama.title}</p>`)
+            })
+         */
+
+         // 2. 드라마 장르 중 판타지에 해당하는 드라마 제목만 출력해 주세요. - step4
+         // 필요없는 중괄호나 return 구문등을 정리합니다.
+         /*
+         const result1 = dramas.filter((drama) => drama.genre.includes('판타지')).map((drama) => document.write(`<p>${drama.title}</p>`))
+         */
+      </script>
+   </body>
+</html>

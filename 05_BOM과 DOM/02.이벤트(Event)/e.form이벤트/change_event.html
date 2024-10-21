@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <select>
+         <option value="food1">떡볶이</option>
+         <option value="food2">순대</option>
+         <option value="food3">오뎅</option>
+         <option value="food4">튀김</option>
+      </select>
+      <p>선택 :</p>
+      <script>
+         const select = document.querySelector('select')
+         const p = document.querySelector('p')
+
+         select.addEventListener('change', (event) => {
+            console.log(event)
+         })
+      </script>
+   </body>
+</html>

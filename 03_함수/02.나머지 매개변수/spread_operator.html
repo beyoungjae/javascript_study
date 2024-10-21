@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>document</title>
+      <script>
+         function nonSpread(...items) {
+            console.log(items)
+         }
+
+         function useSpread(...items) {
+            console.log(items)
+         }
+
+         // 전개 연산자 사용 여부 비교하기
+         const array = [1, 2, 3, 4]
+
+         console.log('# 전개 연산자를 사용하지 않은 경우')
+         // 하나씩 배열의 값을 넘겨줘야 한다
+         nonSpread(array[0], array[1], array[2], array[3])
+
+         console.log('# 전개 연산자를 사용한 경우')
+         nonSpread(...array)
+      </script>
+   </head>
+   <body></body>
+</html>

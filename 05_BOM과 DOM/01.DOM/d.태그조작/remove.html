@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>예제</title>
+   </head>
+   <body>
+      <hr />
+      <h1>제거 대상 문서 객체</h1>
+      <hr />
+      <ul>
+         <li class="list1">리스트1</li>
+         <li class="list2">리스트2</li>
+         <li class="list3">리스트3</li>
+      </ul>
+      <script>
+         setTimeout(() => {
+            const h1 = document.querySelector('h1')
+            document.body.removeChild(h1) //body의 자식인 h1 요소 제거
+
+            const ul = document.querySelector('ul')
+            const list3 = document.querySelector('.list3')
+            ul.removeChild(list3) //ul요소의 자식인 list3요소 제거
+
+            const list2 = document.querySelector('.list2')
+            list2.remove() // list2요소 제거
+         }, 3000)
+      </script>
+   </body>
+</html>

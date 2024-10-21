@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         /*
+            depts 배열은 A회사의 부서명을 저장하고 있습니다.
+            이 회사의 개발부는 총 3개인데 데이터가 모두 개발부로 저장된 상태입니다.개발부1, 개발부2, 개발부3.. 형태로 넘버링을 해 데이터를 다시 저장하세요.
+         */
+
+         const depts = ['개발부', '개발부', '연구부', '개발부', '인사부', '회계부', '마케팅부']
+         let i = 0
+
+         const result = depts.map((dept) => {
+            if (dept.indexOf('개발부') !== -1) {
+               i++
+               return dept + i
+            } else {
+               return dept
+            }
+         })
+
+         console.log(result)
+      </script>
+   </body>
+</html>

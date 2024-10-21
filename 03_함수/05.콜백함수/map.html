@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         //map 함수: 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환
+
+         const array1 = [1, 4, 9, 16]
+
+         // ES5
+         let val1 = array1.map(function (element, index, array) {
+            return element * 2
+         })
+         console.log(val1)
+
+         // ES6
+         let val2 = array1.map((element) => element * 2)
+         console.log(val2)
+      </script>
+   </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         /*
+            employeesAddress 배열은 직원들의 주소 정보를 가지고 있습니다.
+            이 데이터 중 서울 사는 직원의 주소만 추출 하세요.
+         */
+
+         const employeesAddress = [
+            '서울시 종로구 계동길 555',
+            '인천시 서구 검단로 111',
+            '서울시 강서구 공항로 222',
+            '용인시 수지구 수지로 333',
+            '서울시 용산구 한강대로 555',
+            '수원시 장안구 장안로 222',
+            '서울시 강남구 선릉로 111',
+            '군포시 산본동 산본로 999',
+            '인천시 남동구 남동로 111',
+         ]
+
+         const result = employeesAddress.filter((employee) => {
+            if (employee.indexOf('서울') === -1) {
+               return false
+            } else {
+               return true
+            }
+         })
+
+         console.log(result)
+      </script>
+   </body>
+</html>

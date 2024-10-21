@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         //filter 함수: 주어진 함수를 통과하는 모든 요소를 모아 새로운 배열로 반환
+
+         const words = ['옷장', '컴퓨터', '냉장고', '식기세척기', '텔레비전', '시계']
+
+         //ES5
+         var val1 = words.filter(function (word, index, array) {
+            // 배열 요소중에서 글자가 4글자 이상인 요소만 모아 배열로 리턴
+            return word.length >= 4
+         })
+         console.log(val1)
+
+         // ES6
+         const val2 = words.filter((word) => word.length >= 4)
+         console.log(val2)
+      </script>
+   </body>
+</html>

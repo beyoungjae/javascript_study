@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 배열의 인덱스를 이용해 값 바꾸기
+
+         const array = [273, '문자열', true, [1, 2], ['김영수', '이지혜', '류상진']]
+
+         array[0] = 10
+         console.log(array)
+
+         array[1] = 'String'
+         console.log(array)
+
+         array[4][0] = '김하서'
+         console.log(array)
+      </script>
+   </body>
+</html>

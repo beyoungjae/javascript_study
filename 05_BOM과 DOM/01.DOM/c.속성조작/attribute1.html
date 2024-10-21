@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>예제</title>
+   </head>
+   <body>
+      <img class="rect" src="https://picsum.photos/400/250" alt="랜덤이미지" />
+
+      <script>
+         const rect = document.querySelector('.rect')
+         const src = rect.getAttribute('src')
+         const alt = rect.getAttribute('alt')
+
+         console.log('이미지 경로:', src)
+         console.log('이미지 설명:', alt)
+      </script>
+   </body>
+</html>

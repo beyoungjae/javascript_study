@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h3>브라우저 창의 크기를 변경해 보세요!</h3>
+      <div id="info">현재 창 크기 : <span id="size"></span></div>
+
+      <script>
+         const sizeInfo = document.getElementById('size')
+
+         function updateSize() {
+            const width = window.innerWidth // 브라우저의 너비
+            const height = window.innerHeight // 브라우저의 높이
+            sizeInfo.textContent = `${width}px x ${height}px` // 브라우저의 너비와 높이 sizeInfo에 텍스트로 표시
+         }
+
+         //  함수 실행, 맨 처음에 웹사이트 접속 시 초기 창 크기 표시
+         updateSize()
+         // window : 브라우저 창
+         // 창 크기가 변경될 때 마다 실행
+         window.addEventListener('resize', updateSize)
+      </script>
+   </body>
+</html>

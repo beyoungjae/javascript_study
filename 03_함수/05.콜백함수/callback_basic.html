@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>함수</title>
+      <script>
+         // 숫자를 출력하는 함수
+         function printNumber(num, callback) {
+            console.log('printNmber()함수의 num:', num)
+            callback(num) //  squareNumber(num) 콜백 함수 호출
+         }
+
+         // 숫자를 제곱하는 함수
+         function squareNumber(num) {
+            console.log('squareNumber()함수의 num:', num * num)
+         }
+
+         // printNumber() 함수에 squareNumber()를 콜백으로 전달
+         printNumber(5, squareNumber)
+      </script>
+   </head>
+   <body></body>
+</html>
