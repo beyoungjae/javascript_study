@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h1></h1>
+      <label for="id">아이디</label>
+      <input type="text" id="id" />
+      <button class="btn1">로그인1</button>
+      <button class="btn2">로그인2</button>
+      <button class="btn3">로그인3</button>
+      <a class="link1">링크 이동</a>
+      <a class="link2" href="#" target="_blank">링크 이동</a>
+
+      <ul id="list">
+         <li>첫번째</li>
+      </ul>
+
+      <script>
+         const input = document.querySelector('#id')
+         input.addEventListener('keyup', (event) => {
+            // console.log(event) // 발생한 이벤트에 대한 정보
+            // console.log(event.target.value) // 입력한 값을 가져온다
+            // console.log(event.currentTarget.value) // 입력한 값을 가져온다
+            console.log(input.value) // 입력한 값을 가져온다
+         })
+
+         const btn = document.querySelector('.btn1')
+         btn.addEventListener('click', () => {
+            alert('첫번째 버튼 클릭')
+         })
+
+         const list = document.querySelector('#list')
+         const li = document.createElement('li') // 태그 생성
+         li.textContent = '두번째'
+
+         list.appendChild(li) // li요소를 ul의 자식태그로 넣는다.
+
+         const a1 = document.querySelector('.link1')
+         a1.setAttribute('href', 'www.test.com')
+         const a2 = document.querySelector('.link2')
+         console.log(a2.getAttribute('href'))
+         console.log(a2.getAttribute('target'))
+
+         // DOM: document object model
+         const header = document.querySelector('h1') //css 선택자
+
+         //  header.textContent = '제목입니다' // 현재 선택자 태그에 넣고 싶을 때
+         header.innerHTML = '<p>제목입니다.</p>' // 현재 선택자 태그 자식 요소에 넣고 싶을때
+
+         const label = document.querySelector('label')
+
+         const button = document.querySelector('.btn1')
+         const buttons = document.querySelectorAll('button')
+
+         console.log(buttons)
+
+         buttons.forEach((button) => {
+            console.log(button)
+         })
+
+         console.log(header)
+         console.log(label)
+         console.log(input)
+         console.log(button)
+
+         // BOM: Browser object model
+      </script>
+   </body>
+</html>

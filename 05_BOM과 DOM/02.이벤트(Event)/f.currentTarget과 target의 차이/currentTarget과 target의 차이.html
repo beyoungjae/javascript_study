@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="parent">
+         <button id="child">클릭</button>
+      </div>
+      <script>
+         const parent = document.querySelector('#parent')
+
+         parent.addEventListener('click', (e) => {
+            // 이벤트가 실제로 발생한 요소를 가져온다. -> 이벤트는 실제로 parent에 걸려있지만 parent의 id가 아닌 이벤트가 실제로 발생한 child의 id를 가져온다.(이벤트가 자식요소에서 발생시 가능)
+            console.log('e.target:', e.target.id) // 'child'
+
+            // 이벤트 리스너가 등록된 요소를 가져온다. -> parent 에 이벤트 리스너가 걸려있으므로 parent id만 가져온다.
+            console.log('e.currentTarget:', e.currentTarget.id) // 'parent'
+         })
+      </script>
+   </body>
+</html>

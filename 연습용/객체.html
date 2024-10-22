@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // this : 현재 컨텍스트의 객체를 참조, 상황에 따라 다르게 바인딩될 수 있음.
+
+         const person = {
+            name: 'Alice',
+            great() {
+               console.log(`Hello, my name is ${this.name}`)
+            },
+         }
+         person.great()
+
+         // spread operator : (...) 배열이나 객체를 펼쳐서 다른 배열이나 객체에 추가할 수 있음
+         // 배열 결합이나 객체 복사 등에 유용
+
+         const arr1 = [1, 2, 3]
+         const arr2 = [4, 5, ...arr1]
+
+         const obj1 = { a: 1 }
+         const obj2 = { ...obj1, b: 2 }
+
+         console.log(arr1)
+         console.log(arr2)
+         console.log(obj1)
+         console.log(obj2)
+      </script>
+   </body>
+</html>

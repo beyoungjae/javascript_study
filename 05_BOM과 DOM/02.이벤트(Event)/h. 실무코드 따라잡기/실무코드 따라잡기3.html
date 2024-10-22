@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <input type="checkbox" />
+      <span>타이머 활성화</span>
+      <h1></h1>
+
+      <script>
+         let timer = 0
+         let timerId = 0
+         const h1 = document.querySelector('h1')
+         const checkbox = document.querySelector('input')
+
+         // 체크박스 체크/해제 할 때 이벤트 발생
+         checkbox.addEventListener('change', (e) => {
+            // 체크가 되어있으면 true, 아니면 false
+            if (e.target.checked) {
+               // 1초에 한번씩 h1태그에 초단위 출력
+               timerId = setInterval(() => {
+                  timer += 1
+                  h1.textContent = `${timer}초`
+               }, 1000)
+            } else {
+               clearInterval(timerId)
+            }
+         })
+      </script>
+   </body>
+</html>

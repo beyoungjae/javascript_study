@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <!-- 태그 속성으로 이벤트 실행
+     'on + 이벤트명' 으로 붙여준다 -->
+      <button onclick="test1()">클릭</button>
+      <!-- 이벤트 객체 사용시에는 반드시 event로 써준다 -->
+      <input type="text" onkeyup="test2(event)" />
+
+      <script>
+         function test1() {
+            alert('click이벤트')
+         }
+
+         function test2(event) {
+            const inputValue = event.target.value
+            alert(inputValue)
+         }
+      </script>
+   </body>
+</html>

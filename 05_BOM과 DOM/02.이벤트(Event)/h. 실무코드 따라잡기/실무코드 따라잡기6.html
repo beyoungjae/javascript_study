@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h1></h1>
+      <textarea></textarea>
+
+      <script>
+         /* 아시아권 문자는 키보드 이벤트로 원하는 것을 제대로 구현할 수 없는 경우가 많음. 실제로 트위터는 다음과 같이 타이머를 사용해서 50밀리초마다 한번씩 입력양식의 내부 글자를 확인한다. */
+
+         const textarea = document.querySelector('textarea')
+         const h1 = document.querySelector('h1')
+         let timerId
+
+         textarea.addEventListener('focus', (e) => {
+            timerId = setInterval(() => {
+               // textarea.value -> textarea에 입력된 글자를 가져온다
+               const length = textarea.value.length // 글자수
+               h1.textContent = `글자 수: ${length}`
+            }, 50)
+         })
+
+         textarea.addEventListener('blur', (e) => {
+            clearInterval(timerId) // 타이머 중지
+         })
+      </script>
+   </body>
+</html>

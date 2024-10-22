@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <input type="text" placeholder="텍스트를 입력하세요." />
+      <script>
+         const inputField = document.querySelector('input')
+
+         inputField.addEventListener('input', (e) => {
+            // console.log(e.target.value) // 입력한 값을 가져온다
+            console.log(e.currentTarget.value) // 입력한 값을 가져온다
+         })
+      </script>
+   </body>
+</html>

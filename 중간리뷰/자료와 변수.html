@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         var test // undefined
+         var num1 = null
+         var str = ''
+         var num2 = 0
+
+         if (!test) {
+            console.log('빈문자열 입니다')
+         }
+
+         // const, let, var
+         // var : 값을 바꿀 수 있고, 덮어서 사용할 수 있다. 자율성이 높음
+         var value1 = 0
+         var value1 = 1
+         value1 = 2
+
+         // let : 한 번 정의해놓으면 덮어쓰기를 사용할 수 없다.
+         // let : 값 변경은 가능하다.
+         let value2 = 0
+         value2 = 10
+         //  let value2 = 1
+
+         // const : 한 번 정의해놓으면 덮어쓰기를 사용할 수 없고, 값 변경도 불가능하다
+         const value3 = 1
+         //  value3 = 10
+         //  const value3 = 2
+      </script>
+   </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 객체
+
+         // key 와 value로 이루어짐
+         // key는 중복이 되면 안됨. value는 중복이 되도 상관x
+         // 객체 내부에는 문자, 숫자, 배열, 함수 전부 사용 가능.
+         let dog = {
+            name: '흰둥이',
+            owner: '신짱구',
+            age: 1,
+            family: ['신짱구', '신짱아', '봉미선', '신형만'],
+            // walk: function() {},
+            walk: function () {
+               console.log(this.name + '는 산책 중입니다.')
+            },
+         }
+
+         //  console.log(dog.name)
+         console.log(dog['name'])
+         //  console.log(dog.owner)
+         console.log(dog['owner'])
+         console.log(dog.family[3])
+         console.log(dog['family'][1])
+         //  dog.walk()
+         dog['walk']()
+
+         console.log('')
+
+         dog.name = '검둥이'
+         dog.family[3] = 'ㅇㅅㅇ'
+         dog['owner'] = 'ㅎㅅㅎ'
+         dog.date = '24/10/22' // 추가
+
+         delete dog.name
+         delete dog.family[2]
+         delete dog['owner']
+
+         console.log(dog)
+      </script>
+   </body>
+</html>

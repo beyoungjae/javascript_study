@@ -18,7 +18,18 @@
          const p = document.querySelector('p')
 
          select.addEventListener('change', (event) => {
-            console.log(event)
+            const options = event.currentTarget.options // 모든 option 객체
+            const index = event.currentTarget.options.selectedIndex // 선택한 option 객체의 index
+            console.log(options[index].textContent) // 선택한 option 객체의 text를 가지고 온다
+
+            p.textContent = `선택: ${options[index].textContent}`
+
+            // value 속성 안에 있는 값 가져오기
+            const selectedFood = event.currentTarget.value
+            console.log('selectedFood:', selectedFood)
+
+            const selectedFood2 = event.target.value
+            console.log('selectedFood2:', selectedFood2)
          })
       </script>
    </body>
