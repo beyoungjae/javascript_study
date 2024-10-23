@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const contacts = {
+            familyName: '이',
+            name: '영희',
+            age: 22,
+         }
+
+         // es6 버전의 비구조화 할당 이용
+         var { familyName, name, age } = contacts
+         console.log(familyName, name, age)
+         var { familyName, name: otherName, age: otherAge } = contacts
+         console.log(familyName, otherName, otherAge)
+
+         /*          
+        let familyName = contacts.familyName
+        let name = contacts.name
+        let age = contacts.age 
+        */
+
+         const arr = ['광희', '지수', '영철', 20]
+
+         let [value1, value2, value3, value4] = arr
+         console.log(value1, value2, value3, value4)
+
+         /*
+         let value1 = arr[0]
+         let value2 = arr[1]
+         let value3 = arr[2] 
+         */
+      </script>
+   </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function asyncTask() {
+            return new Promise((resolve, reject) => {
+               setTimeout(() => {
+                  const success = false // 어떤 작업이 성공했다고 가정
+                  if (success) {
+                     resolve('Task success') // 이행 상태로 변경됨
+                  } else {
+                     reject('Task failed') // 거부 상태로 변경됨
+                  }
+               }, 1000)
+            })
+         }
+
+         asyncTask()
+            .then((result) => {
+               console.log(result)
+            })
+            // ccatch는 맨 매지막에 붙인다
+            .catch((error) => {
+               console.log(error)
+            })
+      </script>
+   </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 비동기 사례
+         /*
+         console.log('Hello')
+
+         setTimeout(() => {
+            console.log('Bye')
+         }, 3000)
+
+         console.log('Hello Agn')
+         */
+
+         // 비동기 코드를 동기로 바꾸는 법 -> 콜백함수 이용
+
+         function sayGoodBye(callback) {
+            setTimeout(() => {
+               console.log('Bye')
+               callback()
+            }, 3000)
+         }
+
+         console.log('Hello')
+
+         sayGoodBye(() => {
+            console.log('Hello Agn')
+         })
+      </script>
+   </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const dog1 = {
+            이름: '구름',
+            나이: 6,
+            종족: '강아지',
+         }
+
+         const dog2 = { ...dog1 }
+         dog2.이름 = '별'
+         dog2.나이 = 1
+
+         console.log(dog1)
+         console.log(dog2)
+      </script>
+   </body>
+</html>
