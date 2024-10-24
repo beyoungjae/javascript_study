@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>디스코드 알림</title>
+      <style>
+         body {
+            font-family: Arial, sans-serif;
+         }
+         #messages {
+            margin-top: 20px;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>디스코드 알림</h1>
+      <div id="messages"></div>
+
+      <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js"></script>
+      <script>
+         // Firebase 설정
+         const firebaseConfig = {
+            apiKey: 'YOUR_API_KEY',
+            authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
+            databaseURL: 'https://YOUR_PROJECT_ID.firebaseio.com',
+            projectId: 'YOUR_PROJECT_ID',
+            storageBucket: 'YOUR_PROJECT_ID.appspot.com',
+            messagingSenderId: 'YOUR_SENDER_ID',
+            appId: 'YOUR_APP_ID',
+         }
+
+         // Firebase 초기화
+         const app = firebase.initializeApp(firebaseConfig)
+         const database = firebase.database()
+
+         // 데이터베이스에서 메시지 가져오기
+         database.ref('messages').on('child_added', (snapshot) => {
+            const message = snapshot.val()
+            const messageElement = document.createElement('div')
+            messageElement.textContent = message
+            document.getElementById('messages').appendChild(messageElement)
+         })
+      </script>
+   </body>
+</html>
