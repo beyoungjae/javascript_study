@@ -1,7 +1,7 @@
 /* styles.css */
 body {
    font-family: Arial, sans-serif;
-   background-color: #f9f9f9;
+   background-color: #f2f5f9;
    color: #333;
    margin: 0;
    padding: 20px;
@@ -10,12 +10,59 @@ body {
 .container {
    max-width: 600px;
    margin: auto;
-   background: white;
+   background: #fff;
    padding: 20px;
-   border-radius: 8px;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   border-radius: 12px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
    text-align: center;
+   color: #444;
+   margin-bottom: 20px;
+}
+
+#notifications {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+
+.notification {
+   background: #e0e7ff;
+   border-left: 5px solid #4f46e5;
+   padding: 15px;
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notification .time {
+   font-size: 0.9em;
+   color: #666;
+   display: block;
+   margin-bottom: 8px;
+}
+
+.notification .content {
+   font-size: 1em;
+   color: #333;
+}
+
+.notification ul {
+   margin: 0;
+   padding-left: 20px;
+}
+
+.notification ul li {
+   margin: 4px 0;
+}
+
+@media (max-width: 600px) {
+   .container {
+      padding: 15px;
+   }
+
+   .notification {
+      padding: 12px;
+   }
 }
