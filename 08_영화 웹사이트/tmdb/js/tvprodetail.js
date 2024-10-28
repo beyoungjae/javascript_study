@@ -20,13 +20,13 @@ const getDetailTv = async (tvdetail) => {
       const tvimg = `https://image.tmdb.org/t/p/w300${data.poster_path}`
 
       const rowHtml = `
-        <div class="row">
+        <div class="row" style="padding: 0 150px">
         <div class="col-sm-3" style="text-align:center">
         <img src="${tvimg}" alt="${data.name}" class="poster-detail" style="max-width: 100%" />
         </div>
         <div class="col-sm-9">
         <h2>${data.name}</h2>
-        <ul class="movie-info">
+        <ul class="tvprogram-info">
         <li>원제목: ${data.original_name}, ${data.original_language}</li>
         <li>평점: ${data.vote_average.toFixed(1)}</li>
         <li>최근 방영일: ${data.last_air_date}</li>
@@ -35,6 +35,7 @@ const getDetailTv = async (tvdetail) => {
         </ul>
         </div>
         </div>
+        <hr>
        `
       mainContainer.innerHTML += rowHtml
 
@@ -51,24 +52,23 @@ const getseasonTv = async (seasons) => {
    try {
       const response = await fetch(seasons, options)
       const data2 = await response.json()
-      console.log(data2)
 
       let seasonRowHtml = `
        <div class="row" style="margin-top:30px">
-        <div class="col-sm-3 p-3">
-            <div class="season">
+        <div>
+            <div class="season-container">
       `
 
       data2.seasons.forEach((season, index) => {
          if (index < 7) {
             seasonRowHtml += `
-    <a href="#">
-        <p>
+    <a href="#" class="season-link">
+        <span>
             ${season.name} 
             (평점 ${season.vote_average > 0.0 ? season.vote_average.toFixed(1) : '없음'})
             보러가기 - 
-            ${season.air_date !== null ? season.air_date : '방영일자 조회되지 않음'}
-        </p>
+            ${season.air_date !== null ? season.air_date + ' 방영' : '방영일자 조회되지 않음'}
+        </span>
     </a>
 `
          }
