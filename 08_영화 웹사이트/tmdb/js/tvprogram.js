@@ -24,16 +24,18 @@ const getTvprograms = async (url) => {
 
             const Tvprogram = results[index]
             rowhtml += `
-                 <div class="col-sm-6 p-3">
-                    <div class="card">
-                        <a href="./tvprodetail.html?movie_id=${Tvprogram.id}"><img src="https://image.tmdb.org/t/p/w500${Tvprogram.poster_path}" class="card-img-top poster" alt="${Tvprogram.name}" /></a>
-                        <div class="card-body">
-                            <p>${Tvprogram.name}</p>
-                            <p class="card-text average">평점: ${Tvprogram.vote_average > 0 ? Tvprogram.vote_average.toFixed(1) : '평점 없음'}점</p>
-                            <p>줄거리: ${Tvprogram.overview.length > 10 ? Tvprogram.overview.slice(0, 10) + '...' : Tvprogram.overview ? Tvprogram.overview : '줄거리 없음'}</p>
+                 <div class="col-sm-6 d-flex align-items-stretch p-3">
+                     <div class="card" style="display: flex; flex-direction: row; align-items: flex-start; padding: 20px; gap: 20px; width: 100%; border: 1px solid #ddd; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);">
+                        <a href="./tvprodetail.html?movie_id=${Tvprogram.id}">
+                           <img src="https://image.tmdb.org/t/p/w500${Tvprogram.poster_path}" class="card-img-top poster" alt="${Tvprogram.name}" style="width: 200px; height: auto; border-radius: 5px;" />
+                        </a>
+                        <div class="card-body" style="text-align: left;">
+                           <h4>${Tvprogram.name}</h4>
+                           <p class="card-text average">평점: ${Tvprogram.vote_average > 0 ? Tvprogram.vote_average.toFixed(1) : '평점 없음'}점</p>
+                           <p>줄거리: ${Tvprogram.overview.length > 10 ? Tvprogram.overview.slice(0, 10) + '...' : Tvprogram.overview ? Tvprogram.overview : '줄거리 없음'}</p>
                         </div>
-                    </div>
-                </div>
+                     </div>
+               </div>
                `
          }
 
